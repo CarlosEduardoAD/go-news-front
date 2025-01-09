@@ -8,9 +8,18 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Fira Code", "sans-serif"],
+        fira: ["Fira Code", "monospace"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "#00ADD8",
+        primaryHover: "#0099B0",
+      },
+      textColor: {
+        primary: "#FFFFFF",
       },
     },
   },
