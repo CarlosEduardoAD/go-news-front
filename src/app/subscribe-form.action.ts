@@ -21,8 +21,10 @@ export async function subscribeAction(_: unknown, formData: FormData): Promise<v
       body: JSON.stringify({ email }),
     });
 
+    console.log(response);
+
     if (response.status !== 201) {
-      throw new Error("Failed to subscribe");
+     console.error("Failed to subscribe");
     }
 
     const json = await response.json();
@@ -30,6 +32,6 @@ export async function subscribeAction(_: unknown, formData: FormData): Promise<v
     redirect(`/confirmation?token=${json.token}`);
 
   } catch (err) {
-    throw err;
+    console.error(err);
   }
 }
