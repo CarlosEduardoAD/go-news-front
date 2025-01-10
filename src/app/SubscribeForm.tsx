@@ -6,7 +6,7 @@ import { subscribeAction } from "./subscribe-form.action";
 import { useActionState } from "react";
 
 export default function SubscribeForm() {
-  const [state, formAction, pending] = useActionState(subscribeAction, null);
+  const [, formAction, pending] = useActionState(subscribeAction, null);
 
   return (
     <form action={formAction} className="flex flex-col sm:flex-row gap-4 justify-center">

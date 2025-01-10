@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   const githubLink = "https://github.com/CarlosEduardoAD";
-  const linkedinLink = "https://www.linkedin.com/in/carloseduardoad";
+  const linkedinLink = "https://www.linkedin.com/in/carlos-eduardo-mariano-regis-990222219";
   const golangLink = "https://golang.org/";
 
   return (
@@ -26,14 +26,14 @@ export default function Home() {
           <nav>
             <ul className="flex space-x-6">
               <li>
-                <a href="/" className="text-gray-600 hover:text-gray-900">
+                <Link href="/" className="text-gray-600 hover:text-gray-900">
                   Início
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="text-gray-600 hover:text-gray-900">
+                <Link href="/about" className="text-gray-600 hover:text-gray-900">
                   Sobre
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

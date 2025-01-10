@@ -1,7 +1,6 @@
-import { Button } from "@/components/button";
 import Image from "next/image";
 import Link from "next/link";
-import { redirect, useSearchParams } from "next/navigation";
+import { redirect } from "next/navigation";
 import ResendButton from "./ResendButton";
 
 export default async function EmailConfirmation({

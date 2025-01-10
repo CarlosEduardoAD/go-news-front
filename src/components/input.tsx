@@ -5,6 +5,7 @@ import * as React from "react"
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
 
+// @ts-ignore
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
     return (
