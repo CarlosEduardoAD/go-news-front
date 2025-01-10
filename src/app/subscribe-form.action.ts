@@ -7,8 +7,7 @@ const schema = z.object({
   email: z.string().email(),
 });
 
-// @ts-ignore
-export async function subscribeAction(state: any, formData: FormData): Promise<void> {
+export async function subscribeAction(_: unknown, formData: FormData): Promise<void> {
   const { email } = schema.parse({
     email: formData.get("email"),
   });
