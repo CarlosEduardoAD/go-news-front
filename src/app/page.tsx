@@ -70,7 +70,7 @@ export default function Home() {
           <ErrorBoundary
             fallback={
               <div className="text-red-500">
-                Algo deu errado! <button onClick={() => window.location.reload()}>Tentar novamente</button>
+                Algo deu errado! 
               </div>
             }
           >
