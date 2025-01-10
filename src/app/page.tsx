@@ -1,10 +1,12 @@
 import Image from "next/image";
 import SubscribeForm from "./SubscribeForm";
 import Link from "next/link";
+import { ErrorBoundary } from "react-error-boundary";
 
 export default function Home() {
   const githubLink = "https://github.com/CarlosEduardoAD";
-  const linkedinLink = "https://www.linkedin.com/in/carlos-eduardo-mariano-regis-990222219";
+  const linkedinLink =
+    "https://www.linkedin.com/in/carlos-eduardo-mariano-regis-990222219";
   const golangLink = "https://golang.org/";
 
   return (
@@ -31,7 +33,10 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-600 hover:text-gray-900">
+                <Link
+                  href="/about"
+                  className="text-gray-600 hover:text-gray-900"
+                >
                   Sobre
                 </Link>
               </li>
@@ -62,9 +67,17 @@ export default function Home() {
 
           <SubscribeForm />
 
-          <p className="text-sm text-gray-500">
-            Toda segunda-feira, sem spam, cancele quando quiser.
-          </p>
+          <ErrorBoundary
+            fallback={
+              <div className="text-red-500">
+                Algo deu errado! <button onClick={() => window.location.reload()}>Tentar novamente</button>
+              </div>
+            }
+          >
+            <p className="text-sm text-gray-500">
+              Toda segunda-feira, sem spam, cancele quando quiser.
+            </p>
+          </ErrorBoundary>
         </div>
       </main>
 
