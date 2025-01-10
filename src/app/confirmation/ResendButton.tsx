@@ -36,7 +36,7 @@ export default function ResendButton({ token }: { token: string }) {
   return (
     <Button
       variant={"destructive"}
-      className="text-indigo-600 hover:text-indigo-500"
+      className="text-primary bg-primary hover:bg-primaryHover"
       onClick={(e) => {
         e.preventDefault();
         return resendEmail(token);

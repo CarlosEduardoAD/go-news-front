@@ -47,7 +47,7 @@ export default async function EmailConfirmation({
           <div className="mt-8">
             <Link
               href="/"
-              className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+              className="text-sm font-medium text-secondary hover:text-secondaryHover"
             >
               ← Voltar para a página inicial
             </Link>

@@ -20,6 +20,8 @@ export default {
       },
       textColor: {
         primary: "#FFFFFF",
+        secondary: "#00ADD8",
+        secondaryHover: "#0099B0",
       },
     },
   },

@@ -10,7 +10,7 @@ const schema = z.object({
 export async function subscribeAction(
   _: unknown,
   formData: FormData
-): Promise<void> {
+): Promise<{ error?: string }> {
   const { email } = schema.parse({
     email: formData.get("email"),
   });
@@ -27,7 +27,11 @@ export async function subscribeAction(
   );
 
   if (response.status !== 201) {
-    throw new Error("Failed to subscribe");
+    const json = await response.json();
+
+    return {
+      error: json.message,
+    };
   }
 
   const json = await response.json();
