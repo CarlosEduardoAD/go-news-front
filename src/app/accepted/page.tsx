@@ -1,7 +1,24 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { redirect } from 'next/navigation';
 
-export default function EmailConfirmed() {
+export default async function EmailConfirmed({
+  searchParams,
+}: {
+  searchParams: Promise<{ token: string }>;
+}) {
+  const id = (await searchParams).token;
+
+  if (!id) {
+    redirect("/");
+  }
+
+  const emailIsAuthorized = await fetch(`${process.env.NEXT_PUBLIC_GO_API_URL}/emails/verify?token=${id}`);
+
+  if (!emailIsAuthorized.ok) {
+    redirect("/");
+  }  
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <main className="flex-1 flex items-center justify-center px-4 py-16">
