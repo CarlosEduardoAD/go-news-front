@@ -17,6 +17,7 @@ export default function ResendButton({ token }: { token: string }) {
     );
 
     if (!response.ok) {
+      setIsLoading(false);
       throw new Error("Failed to resend email");
     }
 
